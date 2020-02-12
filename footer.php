@@ -6,7 +6,7 @@
 				'container'=> false,
 				'menu_class'=> false,
 				'menu_id'=> 'footer-nav',
-				'theme_location' => 'primary'
+				'theme_location' => 'secundary'
 		) ); ?>
   </nav>
   </footer>
