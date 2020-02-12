@@ -11,5 +11,15 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-<?php wp_nav_menu(); ?>
+	<header>
+		<nav itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+			<?php wp_nav_menu( array(
+				'walker' => new crea_Walker_Nav_Menu(),
+				'container'=> false,
+				'menu_class'=> false,
+				'menu_id'=> 'header-nav',
+				'theme_location' => 'primary'
+			) ); ?>
+		</nav>
+	</header>
+	</main>
