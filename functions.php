@@ -70,15 +70,15 @@ add_action( 'after_setup_theme', 'crea_setup' );
 function cr_scripts() {
 	// load cr styles
 	wp_enqueue_style( 'cr-style', get_stylesheet_uri() );
-	// // custome.style
-	// wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/includes/css/custom-style.css' ); 
+	// custome.style
+	wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.css' ); 
 	// Google fonts
 	// wp_enqueue_style( 'cr_fonts_poppins', 'https://fonts.googleapis.com/css?family=Asap:400,500,600,700&display=swap&subset=latin-ext' ); 
 	
 
 	// wp_enqueue_script( 'cr-skip-link-focus-fix', get_template_directory_uri() . '/includes/js/skip-link-focus-fix.js', array(), '2', true );
     // load main js
-	wp_enqueue_script('cr-main', get_template_directory_uri().'/src/js/main.js', array(),'3', true );
+	wp_enqueue_script('cr-main', get_template_directory_uri().'/src/js/main.js', array( 'jquery' ),'3', true );
 
 
 	if ( is_singular() && wp_attachment_is_image() ) {
@@ -93,3 +93,9 @@ add_action( 'wp_enqueue_scripts', 'cr_scripts' );
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/src/wp-nav.php';
+
+// Remove form main nav ul
+// function remove_ul ( $menu ){
+//     return preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $menu );
+// }
+// add_filter( 'wp_nav_menu', 'remove_ul' );
